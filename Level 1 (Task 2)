@@ -1,0 +1,160 @@
+//index.html//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sourabh Yadav Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="resume">
+    <h1>SOURABH YADAV</h1>
+    <p class="role">STUDENT</p>
+
+    <div class="contact">
+      <span>&#128222; +91 9685031475</span>
+      <span>&#128205; Indore</span>
+      <span>&#9993; sourabhriyayadav20@gmail.com</span>
+    </div>
+
+    <section>
+      <h2>ABOUT ME</h2>
+      <p>
+        Passionate and detail-oriented aspiring Web Developer with a strong foundation in HTML, CSS, JavaScript, and modern frameworks like React. Proficient in building responsive and user-friendly websites with a focus on clean code and performance. Eager to contribute to dynamic teams and grow.
+      </p>
+    </section>
+
+    <section>
+      <h2>EDUCATION</h2>
+      <div class="education-entry">
+        <strong>2022–2026 (Bachelor)</strong>
+        <div>
+          <strong>SHIVAJIRAO KADAM INSTITUTE OF TECHNOLOGY AND MANAGEMENT INDORE</strong><br>
+          RGPV Bhopal
+        </div>
+      </div>
+      <div class="education-entry">
+        <strong>2021–2022 (12th)</strong>
+        <div>
+          St. Joseph H. S, School Barwani (M.P)<br>
+          M.P Board – 12th
+        </div>
+      </div>
+      <div class="education-entry">
+        <strong>2019–2020 (10th)</strong>
+        <div>
+          St. Joseph H. S, School Barwani (M.P)<br>
+          M.P Board – 10th
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>SKILLS</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Bootstrap</li>
+        <li>React.Js</li>
+        <li>Node.Js</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>PROJECT</h2>
+      <div class="projects">
+        <span>Weather Check</span>
+        <span>To-Do Aap</span>
+        <span>Spotify Clone</span>
+        <span>Lottery App</span>
+        <span>Ludo Board</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>AIMS</h2>
+      <p><strong>Full Stack Developer</strong></p>
+    </section>
+  </div>
+</body>
+</html>
+
+
+
+//style.css//
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.resume {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin: 0;
+}
+
+.role {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.contact {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.contact span {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  border-bottom: 2px solid #111;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.education-entry {
+  margin-bottom: 10px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills li {
+  flex: 1 1 30%;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
