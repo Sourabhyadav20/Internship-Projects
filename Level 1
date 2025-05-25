@@ -1,1 +1,108 @@
+//index.html//
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">
+      <div id="input"></div>
+      <div id="result">0</div>
+    </div>
+    <div class="buttons">
+      <button>(</button>
+      <button>)</button>
+      <button>ans</button>
+      <button class="del">del</button>
+      <button class="clear">clear</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>%</button>
+      <button>√</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button>/</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>+</button>
+      <button>-</button>
+      <button>0</button>
+      <button>.</button>
+      <button id="enter" class="enter">ENTER</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+//style.css//
+
+body {
+  background-color: #5ab1e0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.display {
+  background-color: #dbeff6;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+#input {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+#result {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #e1ecf4;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c5dff5;
+}
+
+.enter {
+  grid-column: span 2;
+  background-color: #2980b9;
+  color: white;
+}
