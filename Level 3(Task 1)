@@ -1,0 +1,46 @@
+// ==== Backend (Node.js + Express + MongoDB) ==== // server.js const express = require("express"); const mongoose = require("mongoose"); const cors = require("cors"); const app = express(); require("dotenv").config();
+
+app.use(cors()); app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI, () => console.log("MongoDB Connected"));
+
+// Import routes const authRoutes = require("./routes/auth"); const pizzaRoutes = require("./routes/pizza"); const orderRoutes = require("./routes/order"); const adminRoutes = require("./routes/admin");
+
+app.use("/api/auth", authRoutes); app.use("/api/pizzas", pizzaRoutes); app.use("/api/orders", orderRoutes); app.use("/api/admin", adminRoutes);
+
+app.listen(5000, () => console.log("Server started on port 5000"));
+
+
+
+// ==== Frontend (React - src/App.js) ====
+
+import React from 'react'; import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; import Home from './pages/Home'; import Login from './pages/Login'; import Register from './pages/Register'; import Dashboard from './pages/Dashboard'; import AdminPanel from './pages/AdminPanel';
+
+function App() { return ( <Router> <Routes> <Route path="/" element={<Home />} /> <Route path="/login" element={<Login />} /> <Route path="/register" element={<Register />} /> <Route path="/dashboard" element={<Dashboard />} /> <Route path="/admin" element={<AdminPanel />} /> </Routes> </Router> ); }
+
+export default App;
+
+
+
+
+// ==== Sample MongoDB Schema (models/User.js) ==== const mongoose = require("mongoose"); const userSchema = new mongoose.Schema({ name: String, email: { type: String, unique: true }, password: String, role: { type: String, enum: ["user", "admin"], default: "user" }, verified: { type: Boolean, default: false }, }); module.exports = mongoose.model("User", userSchema);
+
+// ==== Pizza Customization Flow ==== // src/pages/Dashboard.js import React, { useState } from 'react';
+
+function Dashboard() { const [base, setBase] = useState(''); const [sauce, setSauce] = useState(''); const [veggies, setVeggies] = useState([]); const [cheese, setCheese] = useState('');
+
+const submitOrder = async () => { const order = { base, sauce, veggies, cheese }; // send to backend via fetch or axios };
+
+return ( <div> <h2>Customize Your Pizza</h2> <select onChange={e => setBase(e.target.value)}> <option value="">Select Base</option> <option value="Thin Crust">Thin Crust</option> <option value="Thick Crust">Thick Crust</option> </select>
+
+<select onChange={e => setSauce(e.target.value)}>
+    <option value="">Select Sauce</option>
+    <option value="Tomato">Tomato</option>
+    <option value="Barbecue">Barbecue</option>
+  </select>
+
+  <label>
+    <input type="checkbox" value="Onion" onChange={e => setVeggies([...veggies, e.target.value])}/> Onion
+  </label>
+  <label>
+    <input type="checkbox" value="Capsicum" onChange={e => setVeggies([...ve
